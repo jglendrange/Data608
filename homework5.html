@@ -1,0 +1,81 @@
+<html>
+<body>
+<h2>Question 1 - Reverse Word </h2>
+
+<script type="text/javascript">
+
+
+function reverse(str){
+    return str.split("").reverse().join("");; 
+};
+
+function calc(){
+    var t = document.getElementById("target");
+    t.innerHTML = reverse(document.getElementById('str').value);
+}
+</script>
+
+<p>
+<form>
+    <input id="str" type="text" size="20">
+    <input type="button" value="Reverse" onClick="calc();">
+</form>
+</p>
+
+<div id="target"></div>
+
+
+<script type="text/javascript">
+function reverse(str){
+    return str.split("").reverse().join("");; 
+};
+
+function calc(){
+    var t = document.getElementById("target");
+    t.innerHTML = reverse(document.getElementById('str').value);
+}
+</script>
+
+<h2>Question 2 - Multiples </h2>
+
+<script type="text/javascript">
+	function collectData(num) {
+      let data = [
+          {r1:1*num,r2:2*num,r3:3*num,r4:4*num},
+          {r1:5*num,r2:6*num,r3:7*num,r4:8*num},
+          {r1:9*num,r2:10*num,r3:11*num,r4:12*num},
+          {r1:13*num,r2:14*num,r3:15*num,r4:16*num},
+          {r1:17*num,r2:18*num,r3:19*num,r4:20*num}
+      ]
+      return data;
+    };
+    
+    function createTable() {
+    	const tableT = document.getElementById('tableTarget');
+        let dataHtml = '';
+        tableData = collectData(document.getElementById('num').value)
+        
+        for(let element of tableData) {
+        	dataHtml += `<tr><td>${element.r1}</td><td>${element.r2}</td><td>${element.r3}</td><td>${element.r4}</td></tr>`;
+        };
+        console.log(dataHtml)
+        tableT.innerHTML = dataHtml;
+        
+    }
+    
+</script>
+
+
+<form>
+    <input id="num" type="number" size="4">
+    <input type="button" value="Create Table" onClick="createTable();">
+</form>
+
+
+<table>
+	<tbody id="tableTarget">
+    </tbody>
+</table>
+
+</body>
+</html>
